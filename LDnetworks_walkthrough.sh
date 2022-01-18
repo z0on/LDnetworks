@@ -127,7 +127,7 @@ sbatch lm.slurm
 
 # serial WGCNA
 >ldss2
-for I in `seq 1 12`;do echo "Rscript zach_wgcna_auto2.R $I">>ldss2;done
+for I in `seq 1 48`;do echo "Rscript LD_WGCNA_auto.R LD_$I.LD.slim_matrix.RData bams zz4_$I.geno">>ldss2;done
 ls5_launcher_creator.py -j ldss2 -n ldss2 -t 1:00:00 -e matz@utexas.edu -w 6 -a tagmap -q normal
 sbatch ldss2.slurm
 
