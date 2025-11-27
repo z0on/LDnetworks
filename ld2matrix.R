@@ -1,5 +1,14 @@
-require(reshape)
 fin = commandArgs(T)
+if (length(fin)<1) {
+	message("
+
+This script reformats ngsLD output into a square matrix.
+Argument: the "slimmed" ngsLD output (see LDnetworks_walkthrough.sh)
+	
+	")
+	stop()
+}
+require(reshape)
 message("reading input file...")
 ald=read.table(fin,sep="\t")
 # unremark next line if reading un-slimmed LD table from ngsLD
